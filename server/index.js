@@ -13,7 +13,9 @@ app.use(cors());
 
 
 
-mongoose.connect("mongodb+srv://singhvaibhav654:n0oIW74HIphNdQkZ@cluster0.vsomvuo.mongodb.net/test",{useNewUrlParser:true});
+mongoose.connect("mongodb+srv://singhvaibhav654:n0oIW74HIphNdQkZ@cluster0.vsomvuo.mongodb.net/test",
+{useNewUrlParser:true}
+);
 
 mongoose.connection
 .once("open",()=>console.log("Connected"))
@@ -27,9 +29,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cors());
-app.use('/adddata', router)
+app.use('/api', router)
 app.use('/data',router)
-app.use('/api',require('./routes/auth'));
+// app.use('/api',require('./routes/auth'));
 
 
 
@@ -42,7 +44,7 @@ app.use('/api',require('./routes/auth'));
 // })
 
 
-app.get("/api", (req, res) => {
+app.get("/ap", (req, res) => {
     res.json({ message: "The Finhuntt" });
   });
 

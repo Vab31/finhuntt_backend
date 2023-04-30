@@ -1,3 +1,8 @@
+
+import express from 'express';
+const app= express();
+
+
 app.post('/signup', async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -12,7 +17,7 @@ app.post('/signup', async (req, res) => {
     }
   });
 
-  app.post('/api/login', async (req, res) => {
+  app.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ email });
@@ -32,3 +37,4 @@ app.post('/signup', async (req, res) => {
         res.status(500).send('Server error');
     }
 });
+
